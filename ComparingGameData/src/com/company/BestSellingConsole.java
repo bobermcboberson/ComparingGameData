@@ -1,5 +1,5 @@
 package com.company;
 
-public class BestSellingConsole {
+public class BestSellingConsole extends BestSelling {
 
 }

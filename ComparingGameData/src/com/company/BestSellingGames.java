@@ -1,4 +1,4 @@
 package com.company;
 
-public class BestSellingGames {
+public class BestSellingGames extends BestSelling {
 }
