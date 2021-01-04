@@ -7,6 +7,5 @@ public class Main {
         int Unitssold;
         int releaseDate;
         String Creator;
-
     }
 }
