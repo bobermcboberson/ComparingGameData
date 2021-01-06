@@ -1,13 +1,13 @@
 package com.company;
 
-public class BestSellinggames extends BestSelling {
+public class BestSellingGame extends BestSelling {
 
     // Fields
     private String Developer;
     private String Publisher;
 
     // Constructor
-    BestSellinggames(String name, int unitSold, String releaseDate, String creator, String developer, String publisher) {
+    BestSellingGame(String name, int unitSold, String releaseDate, String creator, String developer, String publisher) {
         super(name, unitSold, releaseDate, creator);
         Developer = developer;
         Publisher = publisher;
