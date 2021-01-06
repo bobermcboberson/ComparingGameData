@@ -9,12 +9,14 @@ public class BestSelling {
     private String creator;
 
     // Constructor
-    public BestSelling(String name, int unitSold, String releaseDate, String creator) {
+    BestSelling(String name, int unitSold, String releaseDate, String creator) {
         this.name = name;
         this.unitSold = unitSold;
         this.releaseDate = releaseDate;
         this.creator = creator;
     }
+
+    //Getters and Setters
 
     public String getName() {
         return name;
@@ -47,4 +49,6 @@ public class BestSelling {
     public void setCreator(String creator) {
         this.creator = creator;
     }
+
+
 }
