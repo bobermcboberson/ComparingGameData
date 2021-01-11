@@ -1,8 +1,11 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class BestSelling {
 
     // Fields
+    private static ArrayList<BestSelling> sales;
     private String name;
     private int unitSold;
     private String releaseDate;
@@ -14,10 +17,14 @@ public class BestSelling {
         this.unitSold = unitSold;
         this.releaseDate = releaseDate;
         this.creator = creator;
+
+        if (sales == null) {
+            sales = new ArrayList<BestSelling>();
+        }
+        sales.add(this);
     }
 
-    //Getters and Setters
-
+    //Getters and Setter
     public String getName() {
         return name;
     }
@@ -50,5 +57,9 @@ public class BestSelling {
         this.creator = creator;
     }
 
-
+    static void describeAll() {
+        sales.forEach(sales -> {
+            System.out.println(sales.toString());
+        });
+    }
 }
