@@ -24,8 +24,8 @@ public class BestSellingConsole extends BestSelling {
     }
 
     // Constructor
-    public BestSellingConsole(String name, int unitSold, String releaseDate, String creator, String consoleName, String bestSellingGame) {
-        super(name, unitSold, releaseDate, creator);
+    public BestSellingConsole(int ranking, String name, int unitSold, String releaseDate, String creator, String consoleName, String bestSellingGame) {
+        super(ranking, name, unitSold, releaseDate, creator);
         ConsoleName = consoleName;
         BestSellingGame = bestSellingGame;
     }

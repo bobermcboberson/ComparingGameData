@@ -1,27 +1,23 @@
 package com.company;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class BestSellingGame extends BestSelling {
 
     // Fields
-    private String Developer;
     private String Publisher;
+    private String Platform;
 
     // Constructor
-    BestSellingGame(String name, int unitSold, String releaseDate, String creator, String developer, String publisher) {
-        super(name, unitSold, releaseDate, creator);
-        Developer = developer;
+    BestSellingGame(int ranking, String name, int unitSold, String platform, String releaseDate, String creator, String publisher) {
+        super(ranking, name, unitSold, releaseDate, creator);
+        Platform = platform;
         Publisher = publisher;
     }
 
     // Getters and Setters
-    public String getDeveloper() {
-        return Developer;
-    }
-
-    public void setDeveloper(String developer) {
-        Developer = developer;
-    }
-
     public String getPublisher() {
         return Publisher;
     }
@@ -37,5 +33,38 @@ public class BestSellingGame extends BestSelling {
         description = description + "\" The game was released " + this.getReleaseDate();
         description = description + "\" by " + this.getCreator();
         return description;
+    }
+
+    static void read(String dataFilePath) {
+        // creates new scanner
+        Scanner scanner = null;
+        try {
+            File file = new File(dataFilePath);
+            scanner = new Scanner(dataFilePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Problem opening file: " + dataFilePath);
+        }
+        if (scanner == null) {
+            return;
+        }
+
+        while (scanner.hasNext()) {
+            String next = scanner.nextLine();
+            Scanner lineScanner = new Scanner(next);
+            lineScanner.useDelimiter("\t");
+
+            // the tokens
+            int ranking = lineScanner.nextInt();
+            String title = lineScanner.next();
+            int sales = lineScanner.nextInt();
+            String platform = lineScanner.next();
+            String releaseDate = lineScanner.next();
+            String developer = lineScanner.next();
+            String publisher = lineScanner.next();
+
+            BestSellingGame bestSellingGame = new BestSellingGame(ranking, title, sales, platform, releaseDate, developer, publisher);
+        }
+
     }
 }

@@ -10,9 +10,10 @@ public class BestSelling {
     private int unitSold;
     private String releaseDate;
     private String creator;
+    private int ranking;
 
     // Constructor
-    BestSelling(String name, int unitSold, String releaseDate, String creator) {
+    BestSelling(int ranking,String name, int unitSold, String releaseDate, String creator) {
         this.name = name;
         this.unitSold = unitSold;
         this.releaseDate = releaseDate;
@@ -61,5 +62,13 @@ public class BestSelling {
         sales.forEach(sales -> {
             System.out.println(sales.toString());
         });
+    }
+
+    public int getRanking() {
+        return ranking;
+    }
+
+    public void setRanking(int ranking) {
+        this.ranking = ranking;
     }
 }
