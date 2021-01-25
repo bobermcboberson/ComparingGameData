@@ -1,5 +1,8 @@
 package com.company;
 
+import java.io.File;
+import java.util.Scanner;
+
 public class BestSellingConsole extends BestSelling {
 
     // Fields
@@ -38,4 +41,35 @@ public class BestSellingConsole extends BestSelling {
         description = description + "\" by " + this.getCreator();
         return description;
     }
+
+    static void read(String dataFilePath) {
+        // creates new scanner
+        Scanner scanner = null;
+        try {
+            File file = new File(dataFilePath);
+            scanner = new Scanner(file);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Problem opening file: " + dataFilePath);
+        }
+        if (scanner == null) {
+            return;
+        }
+
+        while (scanner.hasNext()) {
+            String next = scanner.nextLine();
+            Scanner lineScanner = new Scanner(next);
+            lineScanner.useDelimiter("\t");
+
+            // the tokens
+            int ranking = lineScanner.nextInt();
+            String Consolename = lineScanner.next();
+            String Company = lineScanner.next();
+            int year = lineScanner.nextInt();
+            String salenumbers = lineScanner.next();
+        }
+
+    }
 }
+
+
