@@ -40,8 +40,8 @@ public class BestSellingGame extends BestSelling {
         Scanner scanner = null;
         try {
             File file = new File(dataFilePath);
-            scanner = new Scanner(dataFilePath);
-        } catch (IOException e) {
+            scanner = new Scanner(file);
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Problem opening file: " + dataFilePath);
         }
