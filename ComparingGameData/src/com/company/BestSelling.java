@@ -13,7 +13,7 @@ public class BestSelling {
     private int ranking;
 
     // Constructor
-    BestSelling(int ranking,String name, int unitSold, String releaseDate, String creator) {
+    BestSelling(int ranking, String name, int unitSold, String releaseDate, String creator) {
         this.name = name;
         this.unitSold = unitSold;
         this.releaseDate = releaseDate;
@@ -58,17 +58,17 @@ public class BestSelling {
         this.creator = creator;
     }
 
-    static void describeAll() {
-        sales.forEach(sales -> {
-            System.out.println(sales.toString());
-        });
-    }
-
     public int getRanking() {
         return ranking;
     }
 
     public void setRanking(int ranking) {
         this.ranking = ranking;
+    }
+
+    static void describeAll() {
+        sales.forEach(sales -> {
+            System.out.println(sales.toString());
+        });
     }
 }

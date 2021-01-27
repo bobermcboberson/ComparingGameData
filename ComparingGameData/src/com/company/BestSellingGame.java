@@ -28,7 +28,8 @@ public class BestSellingGame extends BestSelling {
 
     // Methods
     public String toString() {
-        String description = "\"" + this.getName();
+        String description = "The number " + this.getRanking() + " game, ";
+        description = description + "\"" + this.getName();
         description = description + "\" has sold " + this.getUnitSold() + " units.";
         description = description + "\" The game was released " + this.getReleaseDate();
         description = description + "\" by " + this.getCreator();
