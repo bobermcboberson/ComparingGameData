@@ -64,7 +64,7 @@ public class BestSellingConsole extends BestSelling {
             // the tokens
             int ranking = lineScanner.nextInt();
             String Consolename = lineScanner.next();
-            String Company = lineScanner.next();
+            String Companyname = lineScanner.next();
             int year = lineScanner.nextInt();
             String salenumbers = lineScanner.next();
         }
